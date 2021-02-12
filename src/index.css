@@ -75,7 +75,7 @@ nav .category-sign-nav {
 .category-list-popup {
   margin-top: 2px;
   width: 100%;
-  padding: 1rem;
+  padding: 30px;
   background-color: #f6f6f6;
   z-index: 10;
   display: flex;
