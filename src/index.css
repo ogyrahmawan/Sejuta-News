@@ -1,52 +1,122 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #f1f1f1
+  }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
+nav {
+  display: flex;
+  align-items: center;
+  background-color: #f9f9f9;
+  padding: 0 10px;
+}
+nav .logo {
+  color: black;
+  width: 60px;
+  text-align: center;
+}
+nav .logo h5 {
+  margin-top: 5px;
+  border-right: solid;
+  border-width: 1px;
+  font-size: 12px;
+  font-weight: bolder;
+}
+nav .category-sign-nav {
+  margin-right: 80px;
+  display: flex;
+}
+
+.home-container {
+  height: 100vh;;
+}
+
+
 .container-category {
   display: flex;
   width: 100%;
 }
-.list-category {
-  margin: 0;
-  height: 50px;
-  background: #f6f6f6;
-  max-width: 95%;
-  overflow: hidden;
-  list-style: none;
-  display: flex;
-}
-.list-category li {
-  margin-top: 1rem;
-  list-style: none;
-  margin-right: 2rem;
-  color: black;
-  text-align: start;
-  font-size: small;
+
+.category-list .selected {
+  border-bottom: solid;
+  color: darkred;
 }
 
 .dropdown-list {
-  background: #f6f6f6;
-  height: 50px;
-  width: 5%;
-  display:flex;
-  justify-content: center;
-  align-items: center;
+  margin-top: 3px;
+  margin-left: 20px;
+}
+.dropdown-list .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  position: absolute;
+  top: 4vw;
+  right: 40px;
+  z-index: 1;
+  
+}
+.dropdown-list:hover .tooltiptext {
+  visibility: visible;
 }
 .category-list-popup {
-  width: max-content;
-  position: absolute;
+  margin-top: 2px;
+  width: 100%;
+  padding: 1rem;
+  background-color: #f6f6f6;
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+}
+.category-list-popup a {
+  height: fit-content;
 }
 
 .category {
-  cursor: pointer;
+  margin: 10px;
+  background-color: #ffffff;
+  padding: 10px;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 10px;
+}
+
+.selected .category {
+  background-color: black;
+  color: white;
+}
+
+
+.main-container {
+  background-color: #f4f4f4;
+  padding: 20px;
+}
+.section-news {
+  margin: 10px;
+  background-color: white;
+  padding: 50px;
+  border-radius: 10px;
+}
+.section-news h4 {
+  font-weight: bolder;
+}
+.article-thumbnail {
+  margin: 10px;
+}
+.article-thumbnail img {
+  width: 100%;
+  border-radius: 20px;
 }

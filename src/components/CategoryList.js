@@ -1,9 +1,11 @@
-import { useEffect, useState } from "react"
+import { useEffect} from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { fetchNews, setSelectedCategory } from "../redux/actions/newsAction"
+import { fetchNews} from "../redux/actions/newsAction"
+import { useHistory, NavLink} from 'react-router-dom'
 
 const CategoryList = ({setToggleList}) => {
   const dispatch = useDispatch()
+  const history = useHistory()
   const categoryList = useSelector(state => state.categoryList)
 
   useEffect(() => {
@@ -11,21 +13,23 @@ const CategoryList = ({setToggleList}) => {
   }, [dispatch])
 
   const handleCategorySelect = (categoryName) => {
-    console.log(categoryName)
-    dispatch(setSelectedCategory(categoryName))
+    history.push(`/${categoryName}`)
     setToggleList()
   }
   return (
-    <div className="container category-list-popup">
-      <div className="bg-dark text-white row wid d-flex justify-content-center">
-        {
-          categoryList?.map(category => (
-          <div onClick={() => handleCategorySelect(category.name)} className="category col-md-2">
-              {category.name}
-          </div>
-          ))
-        }
-      </div>
+    <div className="category-list-popup">
+      {
+        categoryList?.map(category => (
+        <NavLink 
+        to={`/${category.name}`}
+        activeClassName="selected"
+        >
+        <div onClick={() => handleCategorySelect(category.name)}key={category.id} className="category">
+            {category.name}
+        </div>
+        </NavLink>
+        ))
+      }
     </div>
   )
 
