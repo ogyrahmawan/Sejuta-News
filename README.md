@@ -3,7 +3,7 @@
 # USAGE
 ```
 Make sure you have Node.js and npm in your computer and then run `npm install`.
-Run `nodemon serve.js  to start the server.
+Run `nodemon app.js  to start the server.
 Run `npm run serve` to start the client
 ```
 
